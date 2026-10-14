@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- this makes the site work properly on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahnoor Parvez | Web Development Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- navbar (stays on top when scrolling) -->
+  <header class="navbar">
+    <a href="#home" class="logo">Mahnoor Parvez</a>
+
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-buttons">
+      <!-- dark/light mode button -->
+      <button id="theme-btn" aria-label="Change theme">🌙</button>
+      <!-- hamburger, only shows on small screens -->
+      <button id="menu-btn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="hero">
+      <h1>Hi, I'm <span class="accent">Mahnoor Parvez</span></h1>
+      <h2>Web Development Student</h2>
+      <p>I like making websites and I'm learning something new every day. Take a look at what I've built so far!</p>
+      <a href="#projects" class="btn">View My Projects</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I am pursuing my BS degree in Software Engineering at Abdul Wali Khan University.
+        I'm learning web development and I enjoy turning my ideas into real
+        websites. Right now I'm practicing by building small projects.
+      </p>
+
+      <h3>Interests</h3>
+      <p>
+        I have a strong interest in coding, reading, and exploring new ideas
+        and technologies. I also enjoy traveling and discovering new places
+        and experiences.
+      </p>
+
+      <h3>Skills</h3>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Responsive Design</li>
+        <li>Git &amp; GitHub</li>
+        <li>Deployment</li>
+      </ul>
+
+      <h3>Goals</h3>
+      <p>
+        As I continue my journey in software engineering, my goal is to build
+        my technical skills, gain practical experience, and grow into a skilled
+        software professional who can create useful and innovative solutions.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>The Benefits of Learning to Cook at Home</h3>
+          <p>An article page about why cooking at home is good for you, with a header, sections, a picture, simple ways to get started and a footer.</p>
+          <p class="tech"><strong>Technology:</strong> HTML</p>
+          <a href="https://github.com/MahnoorParvez/Cooking-Article" target="_blank" rel="noopener">GitHub Link</a>
+        </div>
+
+        <div class="card">
+          <h3>Interactive To-Do List</h3>
+          <p>A to-do list where you can add tasks, mark them as done and delete them.</p>
+          <p class="tech"><strong>Technology:</strong> HTML, CSS, JavaScript</p>
+          <a href="https://github.com/MahnoorParvez/To-do-list" target="_blank" rel="noopener">GitHub Link</a>
+        </div>
+
+        <div class="card">
+          <h3>Responsive Product Landing Page</h3>
+          <p>A landing page for a handmade candle from the brand Wick &amp; Wild. It adjusts to different screen sizes.</p>
+          <p class="tech"><strong>Technology:</strong> HTML, CSS</p>
+          <a href="https://github.com/MahnoorParvez/Candle-landing-page" target="_blank" rel="noopener">GitHub Link</a>
+        </div>
+
+        <div class="card">
+          <h3>Mahnoor Parvez - Personal Profile</h3>
+          <p>My first assignment. A personal profile page about who I am, what I'm doing and what I'm interested in.</p>
+          <p class="tech"><strong>Technology:</strong> HTML</p>
+          <a href="https://github.com/MahnoorParvez/Personal-Profile" target="_blank" rel="noopener">GitHub Link</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: <a href="mailto:mahnoorparvezzz@gmail.com">mahnoorparvezzz@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/MahnoorParvez" target="_blank" rel="noopener">github.com/MahnoorParvez</a></p>
+
+      <!-- novalidate because I'm checking the form with JavaScript -->
+      <form id="contact-form" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name">
+        <small class="error" id="name-error"></small>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com">
+        <small class="error" id="email-error"></small>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message here..."></textarea>
+        <small class="error" id="message-error"></small>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p class="success" id="form-success"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mahnoor Parvez</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

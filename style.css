@@ -1,0 +1,291 @@
+/* colors for light mode (default) */
+:root {
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --accent: #4f46e5;
+  --border: #e2e8f0;
+}
+
+/* colors for dark mode, JS adds the "dark" class to body */
+body.dark {
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #818cf8;
+  --border: #334155;
+}
+
+/* reset default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-buttons button {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* hamburger hidden on big screens */
+#menu-btn {
+  display: none;
+}
+
+/* home section */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero h2 {
+  color: var(--muted);
+  font-weight: 500;
+  margin: 0.5rem 0 1rem;
+}
+
+.hero p {
+  max-width: 500px;
+  margin-bottom: 1.5rem;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* button */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* sections */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section h3 {
+  margin: 1.5rem 0 0.5rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+}
+
+.skills li {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+}
+
+/* project cards using grid (2 columns because I have 4 projects) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.tech {
+  color: var(--muted);
+  margin: 0.8rem 0;
+  font-size: 0.9rem;
+}
+
+/* contact form */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-top: 1.5rem;
+}
+
+label {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* red border when a field has an error */
+input.invalid,
+textarea.invalid {
+  border-color: #dc2626;
+}
+
+.error {
+  color: #dc2626;
+  min-height: 1.2rem;
+}
+
+.success {
+  color: #16a34a;
+  margin-top: 1rem;
+}
+
+form .btn {
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* mobile styles (768px and smaller) */
+@media (max-width: 768px) {
+
+  /* cards go to 1 column */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  /* show hamburger */
+  #menu-btn {
+    display: block;
+  }
+
+  /* hide the links until the menu is opened */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links li {
+    padding: 1rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* JS adds this class when hamburger is clicked */
+  .nav-links.open {
+    display: flex;
+  }
+}
